@@ -1,0 +1,226 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Speed Sweets</title>
+	<script src="https://www.paypalobjects.com/js/external/dg.js" type="text/javascript">
+	</script>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Draggable directions</title>
+	<style>
+	.borderimg { 
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image-source: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVAAAACWCAMAAAC/8CD2AAAAA1BMVEX/abRh0a5MAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF8GxXYAARizDlgAAAAASUVORK5CYII=);    
+    border-image-slice: 30;
+}
+		.column {
+    float: left;
+    padding: 10px;
+}
+
+		.column.side {
+   			 width: 20%;
+		}
+		.column.middle {
+    		width: 51%;
+		}
+		.headers {
+			color:purple;
+			text-align: center;
+			font-family: monospace;
+		}
+		 body {background-color: pink;
+		}
+		 form {text-align: center;
+		 	   color:purple;
+		 		font-family: monospace;
+		 		font-size: 20px}
+		 #map {
+        height: 400px;
+        width: 100%;
+       }
+       h3 {
+       	color: white;
+			text-align: center;
+			font-family: monospace;
+			font-size: 50px;
+       }
+       ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #008CBA;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:monospace;
+    font-size: 16px;
+}
+
+li a:hover {
+    background-color: purple;
+}
+.footer {
+    background-color: pink;
+    padding: 10px;
+    text-align: center;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#truckpic { width: 250px;}
+ #right-panel {
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+
+      #right-panel select, #right-panel input {
+        font-size: 15px;
+      }
+
+      #right-panel select {
+        width: 100%;
+      }
+
+      #right-panel i {
+        font-size: 12px;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+        float: left;
+        width: 63%;
+        height: 100%;
+      }
+      #right-panel {
+        float: right;
+        width: 34%;
+        height: 100%;
+      }
+      .panel {
+        height: 100%;
+        overflow: auto;
+      }
+	</style>
+
+</head>
+<body>
+	<div class="borderimg headers">
+    <h1>Speed Sweets: Get the Scoop!</h1>
+</div>
+
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">Customer</a></li>
+  <li><a href="#contact">Driver</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+
+ <h3>Ice Cream Truck Map</h3>
+    <div id="map">       <div id="map"></div>
+    <div id="right-panel">
+      <p>Total Distance: <span id="total"></span></p>
+    </div>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: {lat: 39.9522, lng: -75.1932}  // Australia.
+        });
+
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer({
+          draggable: true,
+          map: map,
+          panel: document.getElementById('right-panel')
+        });
+
+        directionsDisplay.addListener('directions_changed', function() {
+          computeTotalDistance(directionsDisplay.getDirections());
+        });
+
+        displayRoute('South Philadelphia, PA', 'University City, PA', directionsService,
+            directionsDisplay);
+      }
+
+      function displayRoute(origin, destination, service, display) {
+        service.route({
+          origin: origin,
+          destination: destination,
+          travelMode: 'DRIVING',
+          avoidTolls: true
+        }, function(response, status) {
+          if (status === 'OK') {
+            display.setDirections(response);
+          } else {
+            alert('Could not display directions due to: ' + status);
+          }
+        });
+      }
+
+      function computeTotalDistance(result) {
+        var total = 0;
+        var myroute = result.routes[0];
+        for (var i = 0; i < myrouthe.legs.length; i++) {
+          total += myroute.legs[i].distance.value;
+        }
+        total = total / 1000;
+        document.getElementById('total').innerHTML = total + ' km';
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCsFbhXMcbNZTW10__qtVUSApiP1Yq__k&callback=initMap">
+    </script></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 39.9415, lng: -75.1995};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+       </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCsFbhXMcbNZTW10__qtVUSApiP1Yq__k&callback=initMap">
+    </script>
+</div>
+<br>
+  <form action="https://www.sandbox.paypal.com/webapps/adaptivepayment/flow/pay" target="PPDGFrame" class="standard">
+<label for="buy">Pay Now:</label>
+<input type="image" id="submitBtn" value="Pay with PayPal" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif">
+<input id="type" type="hidden" name="expType" value="light">
+<input id="paykey" type="hidden" name="paykey" value="insert_pay_key">
+</form>
+</div>
+
+<div class="borderimg footer">
+    <p>Please reach out to us with any questinos, comments, or concerns!</p>
+    <p>Our team email: <a href="https://www.youtube.com/watch?v=fvtQYsckLxk">speedsweets@gmail.com<p>
+</div>
+</body>
+</html>
