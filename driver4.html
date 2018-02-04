@@ -1,0 +1,155 @@
+
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Speed Sweets</title>
+
+
+ <style>
+ .borderimg { 
+   border: 10px solid transparent;
+   padding: 15px;
+   border-image-source: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVAAAACWCAMAAAC/8CD2AAAAA1BMVEX/abRh0a5MAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF8GxXYAARizDlgAAAAASUVORK5CYII=);    
+   border-image-slice: 30;
+}
+   .column {
+   float: left;
+   padding: 9px;
+}
+   .column.side {
+        width: 20%;
+   }
+   .column.middle {
+       width: 51%;
+   }
+   .headers {
+     color:purple;
+     text-align: center;
+     font-family: monospace;
+   }
+    body {background-color: pink;
+   }
+    form {text-align: center;
+        color:purple;
+       font-family: monospace;
+       font-size: 20px}
+
+      }
+      h3 {
+       color: white;
+     text-align: center;
+     font-family: monospace;
+     font-size: 50px;
+      }
+      ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: #008CBA;
+}
+li {
+   float: left;
+}
+li a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-family:monospace;
+   font-size: 16px;
+}
+li a:hover {
+   background-color: purple;
+}
+.footer {
+   background-color: pink;
+   padding: 10px;
+   text-align: center;
+}
+.row:after {
+   content: "";
+   display: table;
+   clear: both;
+}
+#truckpic { 
+ width: 250px;
+}
+
+ </style>
+
+</head>
+<body>
+ <div class="borderimg headers">
+   <h1>Speed Sweets: Get the Scoop!</h1>
+</div>
+
+
+<ul>
+ <li><a class="active" href="#home">Home</a></li>
+ <li><a href="#news">Customer</a></li>
+ <li><a href="#contact">Driver</a></li>
+ <li><a href="#about">About</a></li>
+</ul>
+
+ <div class="row">
+ <div class="column side headers">
+   <img src="http://static.wixstatic.com/media/50cb2d_c3660dbb3b72427d82d6d19c6afa40d7.png_256">
+     </div>
+
+<div class="column middle">
+<h1 class="headers">
+ Register Your Ice Cream Truck!
+</h1>
+ <form action="/action_page.php">
+ First name:<br>
+ <input type="text" name="firstname">
+ <br>
+ <br>
+ Last Name:<br>
+ <input type="text" name="lastname">
+ <br>
+ <br>
+ Email Address:<br>
+ <input type="text" name="email">
+ <br>
+ <br>
+ Mobile Number:<br>
+ <input type="text" name="email">
+ <br>
+ <br>
+ Buisness Name and License Plate Number:<br>
+ <textarea name="Details" rows="5" cols="50"> Type Here </textarea>
+ <br>
+ <br>
+ Specific information about your truck/accessible travel locations for your buisness:<br>
+ <textarea name="Details" rows="7" cols="50"> Type Here </textarea>
+ <br>
+ <br>
+ Zip Code:<br>
+  <input type="text" name="email">
+  <br>
+  <br>
+
+ SUBMIT:
+  <input type="submit" value="submit">
+ </form>
+ <form action="">
+<input type="checkbox" name="vehicle" value="Bike">Allow this website to use your location?
+</form>
+ </div>
+
+<div class="column side headers">
+   <img src="https://www.tenstickers.co.uk/wall-stickers/img/preview/ice-cream-truck-kids-stickers-7785.png" id="truckpic">
+ </div>
+</div>
+
+   <div class="borderimg headers footer">
+   <p>Please reach out to us with any questions, comments, or concerns!</p>
+   <p>Our team email: <a href="https://www.youtube.com/watch?v=fvtQYsckLxk">speedsweets@gmail.com<p>
+</div>
+
+</body>
+</html>
