@@ -15,17 +15,7 @@
     border-image-source: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVAAAACWCAMAAAC/8CD2AAAAA1BMVEX/abRh0a5MAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF8GxXYAARizDlgAAAAASUVORK5CYII=);    
     border-image-slice: 30;
 }
-		.column {
-    float: left;
-    padding: 10px;
-}
-
-		.column.side {
-   			 width: 20%;
-		}
-		.column.middle {
-    		width: 51%;
-		}
+		
 		.headers {
 			color:purple;
 			text-align: center;
@@ -77,12 +67,6 @@ li a:hover {
     padding: 10px;
     text-align: center;
 }
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-#truckpic { width: 250px;}
  #right-panel {
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
@@ -120,6 +104,7 @@ li a:hover {
         height: 100%;
         overflow: auto;
       }
+
 	</style>
 
 </head>
@@ -130,7 +115,7 @@ li a:hover {
 
 
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
+  <li><a class="active" href="icecreamuber/SpeedSweets.html">Home</a></li>
   <li><a href="#news">Customer</a></li>
   <li><a href="#contact">Driver</a></li>
   <li><a href="#about">About</a></li>
@@ -138,10 +123,11 @@ li a:hover {
 
 
  <h3>Ice Cream Truck Map</h3>
-    <div id="map">       <div id="map"></div>
+  <div id="map"></div>
     <div id="right-panel">
       <p>Total Distance: <span id="total"></span></p>
     </div>
+    
     <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -191,36 +177,8 @@ li a:hover {
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCsFbhXMcbNZTW10__qtVUSApiP1Yq__k&callback=initMap">
-    </script></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: 39.9415, lng: -75.1995};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 18,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-       </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCsFbhXMcbNZTW10__qtVUSApiP1Yq__k&callback=initMap">
     </script>
-</div>
-<br>
-  <form action="https://www.sandbox.paypal.com/webapps/adaptivepayment/flow/pay" target="PPDGFrame" class="standard">
-<label for="buy">Pay Now:</label>
-<input type="image" id="submitBtn" value="Pay with PayPal" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif">
-<input id="type" type="hidden" name="expType" value="light">
-<input id="paykey" type="hidden" name="paykey" value="insert_pay_key">
-</form>
-</div>
+ 
 
-<div class="borderimg footer">
-    <p>Please reach out to us with any questinos, comments, or concerns!</p>
-    <p>Our team email: <a href="https://www.youtube.com/watch?v=fvtQYsckLxk">speedsweets@gmail.com<p>
-</div>
 </body>
 </html>
